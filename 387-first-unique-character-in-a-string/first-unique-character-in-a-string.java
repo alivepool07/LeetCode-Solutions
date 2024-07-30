@@ -19,15 +19,14 @@
 class Solution {
     public int firstUniqChar(String s) {
         int n = s.length();
-        int[] count = new int[26]; // Assuming lowercase English letters
+        int[] count = new int[26];
 
-        // Build the frequency map
+
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
             count[c - 'a']++;
         }
 
-        // Find the first unique character
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
             if (count[c - 'a'] == 1) {
@@ -35,7 +34,7 @@ class Solution {
             }
         }
 
-        return -1; // No unique character found
+        return -1; 
     }
 }
 
