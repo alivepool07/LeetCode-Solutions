@@ -27,6 +27,7 @@ class Solution {
             even = even.next;
         }
         odd.next = EvenHead;
+        System.gc();
         return oddHead;
     }
 }
