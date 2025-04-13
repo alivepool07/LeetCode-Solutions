@@ -16,7 +16,7 @@ class Solution {
         if(n == 0) return 1;
         long temp = pwr(x , n/2);
 
-        if(n %2 == 0) return (temp * temp ) % MOD;
+        if(n %2 == 0) return (temp * temp ) % MOD;  
         else return (x * temp * temp) % MOD;
     }
 }
