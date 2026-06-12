@@ -6,7 +6,7 @@
 6        while (r < nums.length) {
 7            if(nums[r] == 0) count++;
 8            
-9            while (count > k) {
+9            if (count > k) {
 10                if(nums[l] == 0) count--;
 11                l++;
 12            }
