@@ -1,20 +1,20 @@
 class Solution {
     public int rob(int[] nums) {
 
-        if(nums.length == 1) return nums[0];
-        if(nums.length == 0 || nums == null) return 0;
+        // if(nums.length == 1) return nums[0];
+        // if(nums.length == 0 || nums == null) return 0;
         
         int n = nums.length;
-        int[] dp = new int[n];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
+        
+        int rob1 = 0;
+        int rob2 = 0;
 
-        for(int i = 2; i < n; i++) {
-            int robb = nums[i] + dp[i-2];
-            int skip = dp[i-1];
-
-            dp[i] = Math.max(robb , skip);
+        for(int rob : nums) {
+            int currMax = Math.max(rob1 + rob , rob2);
+            rob1 = rob2;
+            rob2 = currMax;
         }
-        return dp[n-1];
+ 
+        return rob2;
     }
 }
