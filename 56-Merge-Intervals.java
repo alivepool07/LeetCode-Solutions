@@ -1,6 +1,7 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
-        if(intervals ==  null || intervals.length < 2) return intervals;
+        
+        if(intervals == null || intervals.length <=1) return intervals;
 
         Arrays.sort(intervals , (a,b) -> Integer.compare(a[0] , b[0]));
 
@@ -16,8 +17,9 @@ class Solution {
 
             if(currEnd >= nextStart) {
                 currentInterval[1] = Math.max(currEnd , nextEnd);
+
             }
-            else{
+            else {
                 currentInterval = i;
                 ans.add(currentInterval);
             }
